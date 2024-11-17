@@ -14,9 +14,10 @@ public class Connect {
 
     Connect(){
         try{
-            Class.forName("Connect.mysql.cj.jdbc.Driver");
-            Connection connection=DriverManager.getConnection("jdbc:mysql:///UNIVERSITYMANG","root","srij2005@diya08");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/UNIVERSITYMANG","root","srij2005@diya08");
             Statement statement=connection.createStatement();
+            statement.executeQuery("select * from createUNIVERSITYMANG");
         }catch(Exception e){
             e.printStackTrace();
         }
